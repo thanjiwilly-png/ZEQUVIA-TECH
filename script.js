@@ -40,28 +40,11 @@ faqItems.forEach((item) => {
 const contactForm = document.getElementById('contactForm');
 const formStatus = document.querySelector('.form-status');
 
-contactForm?.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  const formData = new FormData(contactForm);
-  const name = (formData.get('name') || '').toString().trim();
-  const email = (formData.get('email') || '').toString().trim();
-  const company = (formData.get('company') || '').toString().trim();
-  const message = (formData.get('message') || '').toString().trim();
-
-  const subject = encodeURIComponent(`Project inquiry from ${name || 'a new client'}`);
-  const body = encodeURIComponent(
-    `Name: ${name}\nEmail: ${email}\nCompany: ${company || 'Not provided'}\n\nProject details:\n${message}`
-  );
-
-  window.location.href = `mailto:hello@zequiatech.com?subject=${subject}&body=${body}`;
-
-  if (formStatus) {
-    formStatus.textContent = 'Your email client has been opened. Please send the message to complete the inquiry.';
-  }
-
-  contactForm.reset();
-});
+if (contactForm && formStatus) {
+  contactForm.addEventListener('submit', () => {
+    formStatus.textContent = 'Sending your inquiry...';
+  });
+}
 
 const revealItems = document.querySelectorAll('.reveal');
 

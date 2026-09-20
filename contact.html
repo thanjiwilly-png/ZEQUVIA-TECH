@@ -3,8 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | ZEQUVIA TECH</title>
     <meta name="description" content="Contact ZEQUVIA TECH to discuss your growth strategy, digital presence, or business transformation project." />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Contact | ZEQUVIA TECH" />
+    <meta property="og:description" content="Contact ZEQUVIA TECH to discuss your growth strategy, digital presence, or business transformation project." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://thanjiwilly-png.github.io/ZEQUVIA-TECH/contact.html" />
+    <meta property="og:image" content="https://thanjiwilly-png.github.io/ZEQUVIA-TECH/ChatGPT%20Image%20Sep%2020,%202026,%2005_24_07%20PM.png" />
+    <link rel="canonical" href="https://thanjiwilly-png.github.io/ZEQUVIA-TECH/contact.html" />
+    <title>Contact | ZEQUVIA TECH</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -58,7 +65,11 @@
             </div>
           </div>
 
-          <form class="contact-form" id="contactForm" method="post" action="mailto:hello@zequiatech.com">
+          <form class="contact-form" id="contactForm" method="POST" action="https://formsubmit.co/hello@zequiatech.com" accept-charset="UTF-8">
+            <input type="hidden" name="_subject" value="New ZEQUVIA TECH inquiry" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="https://thanjiwilly-png.github.io/ZEQUVIA-TECH/thank-you.html" />
             <label>
               Full name
               <input type="text" name="name" placeholder="Your name" required />
@@ -76,7 +87,7 @@
               <textarea name="message" rows="4" placeholder="Tell us about your project" required></textarea>
             </label>
             <button type="submit" class="btn btn-primary">Send inquiry</button>
-            <p class="form-status" aria-live="polite"></p>
+            <p class="form-status" aria-live="polite">We usually reply within one business day.</p>
           </form>
         </div>
       </section>
