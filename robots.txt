@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.zequiatech.com/sitemap.xml
+Sitemap: https://thanjiwilly-png.github.io/ZEQUVIA-TECH/sitemap.xml
