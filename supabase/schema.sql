@@ -29,15 +29,6 @@ begin
 end;
 $$;
 
-revoke all on function public.is_school_member(uuid) from public, anon;
-revoke all on function public.has_school_role(uuid, text[]) from public, anon;
-revoke all on function public.can_access_course(uuid) from public, anon;
-revoke all on function public.is_parent_of(uuid, uuid) from public, anon;
-grant execute on function public.is_school_member(uuid) to authenticated;
-grant execute on function public.has_school_role(uuid, text[]) to authenticated;
-grant execute on function public.can_access_course(uuid) to authenticated;
-grant execute on function public.is_parent_of(uuid, uuid) to authenticated;
-
 drop trigger if exists create_profile_after_signup on auth.users;
 create trigger create_profile_after_signup
 after insert on auth.users
@@ -314,6 +305,15 @@ as $$
       and guardian.student_id = target_student
   );
 $$;
+
+revoke all on function public.is_school_member(uuid) from public, anon;
+revoke all on function public.has_school_role(uuid, text[]) from public, anon;
+revoke all on function public.can_access_course(uuid) from public, anon;
+revoke all on function public.is_parent_of(uuid, uuid) from public, anon;
+grant execute on function public.is_school_member(uuid) to authenticated;
+grant execute on function public.has_school_role(uuid, text[]) to authenticated;
+grant execute on function public.can_access_course(uuid) to authenticated;
+grant execute on function public.is_parent_of(uuid, uuid) to authenticated;
 
 alter table public.schools enable row level security;
 alter table public.profiles enable row level security;
