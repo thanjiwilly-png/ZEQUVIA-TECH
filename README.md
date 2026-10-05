@@ -12,6 +12,12 @@ python -m http.server 3000
 
 Then open http://localhost:3000 in a browser.
 
+## Atlas Academy learning portal
+
+Open `education.html` from the site navigation to access the Atlas Academy portal.
+The portal uses the public Supabase settings in `supabase/config.js`; apply
+`supabase/schema.sql` to that Supabase project before using account sign-in.
+
 ## Production deployment
 
 This project is configured for static hosting on GitHub Pages.

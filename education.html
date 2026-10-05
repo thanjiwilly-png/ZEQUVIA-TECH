@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The Atlas Academy learning portal for courses, assignments, schedules, grades, and school updates." />
+    <meta name="theme-color" content="#f5f7fb" />
+    <meta property="og:title" content="ATLAS Academy | Learning Portal" />
+    <meta property="og:description" content="The Atlas Academy learning portal for courses, assignments, schedules, grades, and school updates." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://thanjiwilly-png.github.io/ZEQUVIA-TECH/education.html" />
+    <link rel="canonical" href="https://thanjiwilly-png.github.io/ZEQUVIA-TECH/education.html" />
+    <title>ATLAS Academy | Learning Portal</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="education.css" />
+  </head>
+  <body class="education-page">
+    <div class="ed-shell" id="educationApp">
+      <aside class="ed-sidebar" aria-label="Portal sidebar">
+        <a class="ed-brand" href="index.html" aria-label="ZEQUVIA TECH home">
+          <img class="ed-brand-mark" src="atlas-academy-logo.jpg" alt="ATLAS Academy logo" />
+          <span><strong>ATLAS</strong><small>ACADEMY</small></span>
+        </a>
+
+        <div class="ed-school-switch">
+          <span class="ed-school-avatar">A</span>
+          <span><strong>Atlas Academy</strong><small>Academic year 2026–27</small></span>
+          <span class="ed-chevron" aria-hidden="true">⌄</span>
+        </div>
+
+        <p class="ed-nav-label">LEARNING</p>
+        <nav class="ed-nav" aria-label="Learning">
+          <a href="#dashboard" data-view="dashboard" class="active"><span aria-hidden="true">▦</span>Overview</a>
+          <a href="#courses" data-view="courses"><span aria-hidden="true">▤</span>My courses</a>
+          <a href="#assignments" data-view="assignments"><span aria-hidden="true">☷</span>Assignments <b class="ed-nav-count" id="assignmentCount"></b></a>
+          <a href="#schedule" data-view="schedule"><span aria-hidden="true">▦</span>Schedule</a>
+          <a href="#grades" data-view="grades"><span aria-hidden="true">◇</span>Grades</a>
+          <a href="#attendance" data-view="attendance"><span aria-hidden="true">◎</span>Attendance</a>
+          <a href="#fees" data-view="fees"><span aria-hidden="true">₦</span>Fees</a>
+          <a href="#exams" data-view="exams"><span aria-hidden="true">✦</span>Exams</a>
+        </nav>
+
+        <p class="ed-nav-label ed-school-label">SCHOOL</p>
+        <nav class="ed-nav" aria-label="School">
+          <a href="#announcements" data-view="announcements"><span aria-hidden="true">◉</span>Announcements</a>
+          <a href="#people" data-view="people" data-admin-only hidden><span aria-hidden="true">♙</span>People</a>
+        </nav>
+
+        <div class="ed-sidebar-bottom">
+          <div class="ed-help-card">
+            <span class="ed-help-icon">?</span>
+            <strong>Need a hand?</strong>
+            <p>Your school team is here to help.</p>
+            <a href="mailto:hello@zequviatech.com">Contact support <span aria-hidden="true">↗</span></a>
+          </div>
+          <a class="ed-back-link" href="index.html"><span aria-hidden="true">←</span> ZEQUVIA TECH</a>
+        </div>
+      </aside>
+
+      <div class="ed-main">
+        <header class="ed-topbar">
+          <div class="ed-breadcrumb"><span>Atlas Academy</span><span aria-hidden="true">/</span><strong id="pageCrumb">Overview</strong></div>
+          <div class="ed-top-actions">
+            <span class="ed-demo-label" id="connectionStatus">CONNECTING</span>
+            <button class="ed-icon-button" type="button" aria-label="View announcements" data-go-view="announcements">♧<i id="announcementDot"></i></button>
+            <button class="ed-button ed-button-light ed-switch-account" type="button" data-action="sign-out">Sign out</button>
+            <button class="ed-user-chip" type="button" data-go-view="profile" aria-label="Open profile">
+              <span class="ed-avatar" id="userAvatar">AM</span>
+              <span class="ed-user-name" id="userName">Alex Morgan<small id="userRole">Student</small></span>
+              <span aria-hidden="true">⌄</span>
+            </button>
+          </div>
+        </header>
+
+        <main class="ed-content" id="viewContent" tabindex="-1"></main>
+        <footer class="ed-footer"><span>© <span id="currentYear"></span> Atlas Academy</span><span>Learning, made a little simpler.</span></footer>
+      </div>
+    </div>
+
+    <div class="ed-toast" id="toast" role="status" aria-live="polite"></div>
+    <dialog class="ed-dialog" id="actionDialog" aria-labelledby="dialogTitle">
+      <form id="actionForm" method="dialog">
+        <div class="ed-dialog-head">
+          <div><span class="ed-dialog-kicker">ATLAS ACADEMY</span><h2 id="dialogTitle"></h2></div>
+          <button class="ed-icon-button" type="button" data-close-dialog aria-label="Close dialog">×</button>
+        </div>
+        <div class="ed-dialog-fields" id="dialogFields"></div>
+        <div class="ed-dialog-actions">
+          <button class="ed-button ed-button-light" type="button" data-close-dialog>Cancel</button>
+          <button class="ed-button ed-button-primary" type="submit" id="dialogSubmit">Save</button>
+        </div>
+      </form>
+    </dialog>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase/config.js"></script>
+    <script src="education.js"></script>
+  </body>
+</html>
